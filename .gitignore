@@ -1,0 +1,11 @@
+node_modules/
+vendor/
+includes/sys.config.php
+.env
+templates/pinboxes/lang
+templates/default/lang
+templates/gallery/lang
+lang
+lang/
+upload
+upload/
