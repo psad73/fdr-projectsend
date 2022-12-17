@@ -72,8 +72,10 @@ class Options
      */
     public function setSystemConstants()
     {
-        $base_uri = (empty($this->getOption('base_uri'))) ? $this->getCurrentUrl() : $this->getOption('base_uri');
-        define('BASE_URI', $base_uri);
+        $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
+        $dotenv->load();
+
+        $base_uri = filter_input(INPUT_ENV, 'BASE_URI');
 
         // Set the default timezone based on the value of the Timezone select box of the options page
         $timezone = $this->getOption('timezone');
